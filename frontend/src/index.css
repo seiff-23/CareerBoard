@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-indigo-50/30 dark:from-slate-900 dark:to-indigo-950/40 text-slate-900 dark:text-slate-100 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Scrollbar moderne */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-100 dark:bg-slate-800 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-indigo-300 dark:bg-indigo-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-400 dark:bg-indigo-500;
+  }
+}
+
+@layer components {
+  /* Cartes modernes */
+  .card {
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl shadow-lg shadow-indigo-100/20 dark:shadow-indigo-950/30 border border-white/20 dark:border-slate-700/50 p-6 transition-all duration-200 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  /* Boutons */
+  .btn-primary {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-2.5 px-5 rounded-xl shadow-md shadow-indigo-500/30 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium py-2.5 px-5 rounded-xl shadow-sm transition-all duration-200 border border-slate-200 dark:border-slate-700;
+  }
+
+  /* Champs de formulaire modernes */
+  input, textarea, select {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200 shadow-sm;
+  }
+
+  input::placeholder, textarea::placeholder {
+    @apply text-slate-400 dark:text-slate-500;
+  }
+
+  label {
+    @apply block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5;
+  }
+
+  /* Badges / tags */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200;
+  }
+
+  /* Statistiques */
+  .stat-card {
+    @apply bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-5 shadow-md border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all duration-200;
+  }
+
+  /* En-tête de colonne Kanban */
+  .kanban-column {
+    @apply bg-slate-100/80 dark:bg-slate-800/80 rounded-2xl p-4 backdrop-blur-sm;
+  }
+
+  /* Carte job dans kanban */
+  .job-card {
+    @apply bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all duration-200 cursor-grab active:cursor-grabbing;
+  }
+}
