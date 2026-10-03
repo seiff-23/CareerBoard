@@ -111,17 +111,6 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Demo credentials hint */}
-          <div className="mt-4 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg border border-indigo-100 dark:border-indigo-800">
-            <p className="text-xs text-indigo-600 dark:text-indigo-400 font-medium mb-1">✨ Demo account</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              Email: <span className="font-mono font-medium">demo@careerboard.dev</span>
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              Password: <span className="font-mono font-medium">demo1234</span>
-            </p>
-          </div>
-
           <p className="mt-5 text-center text-sm text-gray-500 dark:text-gray-400">
             Don't have an account?{' '}
             <Link to="/register" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
