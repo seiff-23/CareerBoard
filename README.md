@@ -6,6 +6,8 @@
 
 CareerBoard is a full-stack web application that helps job seekers manage their entire job search in one place. Features a modern dashboard with analytics, a Kanban board with drag & drop, and complete CRUD with JWT authentication.
 
+[Published interface](https://career-board-orpin.vercel.app) — using the application requires a working backend and a registered account.
+
 ---
 
 ## ✨ Features
@@ -191,6 +193,8 @@ careerboard/
 7. Copy your Render URL (e.g. `https://careerboard-api.onrender.com`)
 
 ### Frontend → Vercel (free tier)
+
+`VITE_API_URL` must point to the deployed backend, including `/api`. Vite embeds this value at build time, so rebuild the frontend after changing it. Without this variable, requests use `/api` on the current origin; production hosting must route that path to the backend. The localhost proxy in `vite.config.ts` only applies during local development.
 
 1. Go to [vercel.com](https://vercel.com) → **New Project**
 2. Import your repository, set **Root directory** to `frontend`
