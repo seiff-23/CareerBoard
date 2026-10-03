@@ -8,7 +8,7 @@ CareerBoard is a full-stack web application that helps job seekers manage their 
 
 ## ✨ Features
 
-- 🔐 **Authentication** — Register / Login with JWT (stored securely, auto-refresh)
+- 🔐 **Authentication** — Register / Login with JWT, stored in localStorage; automatic logout on HTTP 401
 - 📊 **Dashboard** — Stats cards, monthly bar chart (Recharts), status pie chart, interview rate insight
 - 📋 **Applications list** — Search, filter by status/priority, sort, paginate
 - 🗂️ **Kanban board** — Drag & drop cards between columns to update status instantly
@@ -44,8 +44,8 @@ CareerBoard is a full-stack web application that helps job seekers manage their 
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/careerboard.git
-cd careerboard
+git clone https://github.com/seiff-23/CareerBoard.git
+cd CareerBoard
 ```
 
 ### 2. Install all dependencies
@@ -203,14 +203,7 @@ careerboard/
 
 ## 👤 Demo Account
 
-A demo account is pre-seeded for testing:
-
-| Field | Value |
-|-------|-------|
-| Email | `demo@careerboard.dev` |
-| Password | `demo1234` |
-
-> **Note:** Add a seed script to `backend/src/config/seed.js` if you want to auto-create the demo account on first run.
+The repository does not currently include a seed script or a pre-created demo account. Register an account through the application to try it locally.
 
 ---
 
@@ -222,7 +215,7 @@ Pull requests are welcome! For major changes, please open an issue first.
 
 ## 📄 License
 
-MIT — feel free to use this project in your own portfolio.
+MIT is the intended license stated by this project. A LICENSE file still needs to be added to the repository.
 
 ---
 
