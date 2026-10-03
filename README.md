@@ -1,5 +1,7 @@
 # 📋 CareerBoard — Job Application Tracker
 
+[![Project checks](https://github.com/seiff-23/CareerBoard/actions/workflows/checks.yml/badge.svg)](https://github.com/seiff-23/CareerBoard/actions/workflows/checks.yml)
+
 > Track your job applications, visualise your progress, land your dream job.
 
 CareerBoard is a full-stack web application that helps job seekers manage their entire job search in one place. Features a modern dashboard with analytics, a Kanban board with drag & drop, and complete CRUD with JWT authentication.
@@ -10,7 +12,7 @@ CareerBoard is a full-stack web application that helps job seekers manage their 
 
 - 🔐 **Authentication** — Register / Login with JWT, stored in localStorage; automatic logout on HTTP 401
 - 📊 **Dashboard** — Stats cards, monthly bar chart (Recharts), status pie chart, interview rate insight
-- 📋 **Applications list** — Search, filter by status/priority, sort, paginate
+- 📋 **Applications list** — Search, filter by status/priority and sort
 - 🗂️ **Kanban board** — Drag & drop cards between columns to update status instantly
 - 🌙 **Dark / Light mode** — System default + toggle, persisted in localStorage
 - 🏷️ **Tags & Notes** — Add custom tags and freeform notes to each application
@@ -206,6 +208,17 @@ careerboard/
 The repository does not currently include a seed script or a pre-created demo account. Register an account through the application to try it locally.
 
 ---
+
+## Verification
+
+```bash
+npm ci --prefix backend
+npm test --prefix backend
+npm ci --prefix frontend
+npm run build --prefix frontend
+```
+
+GitHub Actions runs the backend regression tests and frontend production build on pushes and pull requests. The controller tests use a simulated database and cover ownership preservation and updates from other users; they do not require MongoDB or production credentials. They are not end-to-end tests.
 
 ## 🤝 Contributing
 

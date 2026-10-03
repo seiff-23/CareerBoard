@@ -112,13 +112,23 @@ const createJob = async (req, res) => {
 // PUT /api/jobs/:id
 const updateJob = async (req, res) => {
   try {
-    const job = await Job.findOne({ _id: req.params.id, user: req.user._id });
-    if (!job) return res.status(404).json({ message: 'Job not found.' });
+    // Only editable fields may be changed; ownership and MongoDB operators
+    // must never come from client input.
+    const fields = ['company', 'position', 'location', 'status', 'salary', 'url',
+      'notes', 'appliedDate', 'priority', 'tags'];
+    const updates = {};
+    for (const field of fields) {
+      if (Object.prototype.hasOwnProperty.call(req.body, field)) {
+        updates[field] = req.body[field];
+      }
+    }
 
-    const updatedJob = await Job.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const updatedJob = await Job.findOneAndUpdate(
+      { _id: req.params.id, user: req.user._id },
+      { $set: updates },
+      { new: true, runValidators: true }
+    );
+    if (!updatedJob) return res.status(404).json({ message: 'Job not found.' });
 
     res.json(updatedJob);
   } catch (error) {
